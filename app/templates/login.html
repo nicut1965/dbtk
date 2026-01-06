@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h2>Autentificare</h2>
+
+<form method="post" action="/login">
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Parolă" required><br>
+    <button type="submit">Login</button>
+</form>
+
+{% if request.query_params.get('error') %}
+<p style="color:red;">Email sau parolă greșită</p>
+{% endif %}
+</body>
+</html>
